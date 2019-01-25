@@ -1,19 +1,42 @@
 package com.samples.sort;
 
+/**
+ * Bubble sort algorithm
+ * @author Davidn
+ *
+ */
 public class BubbleSort {
 
+    /**
+     * This algorithm sort an array by swapping the greater number to the last position of the array.
+     * Checking if the current value is greater to the next one;
+     * reducing the limit avoiding to check again the previous greater element
+     * 
+     * @param array
+     */
     public static void sort(int[] array) {
-	int size = array.length;
-	for (int i = 0; i < size; i++) {
-	    for (int j = 1; j < size - 1; j++) {
-		if (array[j] > array[j - 1]) {
-		    int tmp = array[j - 1];
-		    array[j - 1] = array[j];
-		    array[j] = tmp;
+	int boundary = array.length;
+	for (int i = 0; i < array.length; i++) {
+	    for (int j = 0; j < boundary - 1; j++) {
+		if (array[j] > array[j + 1]) {
+		    swap(array, j, j + 1);
 		}
 	    }
-	    size--;
+	    boundary--;
 	}
+    }
+
+    /**
+     * moves the current position to the next one and vice-versa
+     * 
+     * @param array
+     * @param current
+     * @param next
+     */
+    private static void swap(int[] array, int current, int next) {
+	int tmp = array[next];
+	array[next] = array[current];
+	array[current] = tmp;
     }
 
 }
