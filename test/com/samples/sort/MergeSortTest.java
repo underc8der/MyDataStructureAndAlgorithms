@@ -1,6 +1,7 @@
 package com.samples.sort;
 
 import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -65,5 +66,4 @@ public class MergeSortTest {
 	MergeSort.sort(unsorted);
 	assertArrayEquals(expected, unsorted);
     }
-
 }
